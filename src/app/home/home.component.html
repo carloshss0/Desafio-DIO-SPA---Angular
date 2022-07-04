@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>My App</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+
+
+    <div>
+        <mat-toolbar color="secundary">
+            <mat-toolbar-row>
+                <span>Nota mínima para passar: </span>
+                <input type="text" id="note" name="note" placeholder="Digite a nota mínima">
+                <button (click)="atualizar()">Atualizar</button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+    </div>
+
+
+    <div>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>Alunos</span>
+                <span class="example-spacer"></span>
+            </mat-toolbar-row>
+
+        </mat-toolbar>
+
+
+        <table *ngIf="exibeTabela">
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>E-mail</th>
+                <th>Nota</th>
+                <th>Status</th>
+            </tr>
+            <tr *ngFor="let aluno of listaAlunos">
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.idade}}</td>
+                <td>{{aluno.email}}</td>
+                <td>{{aluno.nota}}</td>
+                <td>{{aluno.status}}</td>
+            </tr>
+        </table>
+
+        <spa-alunos [valorInicial]="valor"></spa-alunos>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
